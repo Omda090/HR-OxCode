@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 
 namespace HR_OxCode
 {
+    //Omda----
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
