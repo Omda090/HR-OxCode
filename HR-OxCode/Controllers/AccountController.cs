@@ -15,6 +15,17 @@ namespace HR_OxCode.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+
         // GET: AccountController/Details/5
         public ActionResult Details(int id)
         {
