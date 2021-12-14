@@ -69,3 +69,21 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.menu ul {
+
+    list-style:none;
+
+}
+
+.menu ul li {
+       background-color:cornflowerblue;
+       border:solid 1px white;
+       width:120px;
+       height:35px;
+       text-align:center;
+       line-height:35px;
+       float:left;
+
+
+   }
