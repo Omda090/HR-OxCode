@@ -16,7 +16,10 @@ namespace HR_OxCode.Controllers
         {
             _context = context;
         }
-
+        public ActionResult Index()
+        {
+            return View();
+        }
 
         [HttpPost]
         public IActionResult Create(StaffProfile staffProfile)
