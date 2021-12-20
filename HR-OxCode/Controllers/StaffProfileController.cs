@@ -73,5 +73,26 @@ namespace HR_OxCode.Controllers
             return View(GetstaffDetails);
         }
 
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var GetstaffDetails = await _context.StaffProfiles.FindAsync(id);
+            return View(GetstaffDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var GetstaffDetails = await _context.StaffProfiles.FindAsync(id);
+            _context.StaffProfiles.Remove(GetstaffDetails);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+
     }
 }
