@@ -7,7 +7,8 @@ namespace HR_OxCode.Models
 {
     public class StaffProfile
     {
-      
+
+        public int id { get; set; }
         public int StaffID { get; set; }
         public string FullNameEn { get; set; }
         public string FullNameAr { get; set; }
@@ -16,7 +17,7 @@ namespace HR_OxCode.Models
         public string Nationality { get; set; }
         public string Religion { get; set; }
         public string Gender { get; set; }
-        public int Mobile { get; set; }
+        public long Mobile { get; set; }
         public string Email { get; set; }
         public DateTime DateOfTime { get; set; }
         public string Address { get; set; }

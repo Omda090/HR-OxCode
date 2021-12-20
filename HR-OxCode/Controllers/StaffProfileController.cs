@@ -16,23 +16,62 @@ namespace HR_OxCode.Controllers
         {
             _context = context;
         }
-        public ActionResult Index()
+        public IActionResult Index()
+        {
+            var displayData = _context.StaffProfiles.ToList();
+            return View(displayData);
+        }
+
+        public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(StaffProfile staffProfile)
+        public async Task<IActionResult> Create(StaffProfile stf)
         {
-
-            _context.Add(staffProfile);
-            _context.SaveChanges();
-          //  StaffProfile.message = "The record is Saved Successfully....";
-            return View();
+            if(ModelState.IsValid)
+            {
+                _context.Add(stf);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(stf);
         }
 
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if(id == null)
+            {
+                return RedirectToAction("Index");
+            }
 
-     
+            var GetstaffDetails = await _context.StaffProfiles.FindAsync(id);
+            return View(GetstaffDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(StaffProfile staff)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Update(staff);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(staff);
+        }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var GetstaffDetails = await _context.StaffProfiles.FindAsync(id);
+            return View(GetstaffDetails);
+        }
 
     }
 }

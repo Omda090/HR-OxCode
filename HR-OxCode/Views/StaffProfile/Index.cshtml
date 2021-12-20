@@ -1,367 +1,108 @@
-﻿
+﻿@model IEnumerable<HR_OxCode.Models.StaffProfile>
+
 @{
-    ViewData["Title"] = "StaffProfile";
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>StaffProfile</h1>
-<ul class="nav nav-pills m-5" id="pills-tab" role="tablist">
-    <li class="nav-item" role="presentation">
-        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">PersonalDetails</a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">MedicalProfile</a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Salary&Benefits</a>
-    </li>
-</ul>
+<h1>Index</h1>
 
-
-
-
-
-
-<div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-
-
-
-        @*<div class="text-right">
-                <img src="..." class="rounded" alt="...">
-            </div>*@
-
-        @*<figure class="figure">
-                <img src="..." class="figure-img img-fluid rounded" alt="...">
-                <figcaption class="figure-caption text-right">A caption for the above image.</figcaption>
-            </figure>*@
-
-
-        <div class="m-5">
-            <form>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputEmail4">FullNameEn</label>
-                        <input type="text" class="form-control" id="inputEmail4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">FullNameAr</label>
-                        <input type="text" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">AttendanceNo</label>
-                        <input type="number" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">MartialStatus</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>Married</option>
-                            <option>Single</option>
-                            <option>Others</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputEmail4">Nationality</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>Sudanese</option>
-                            <option>Egyption</option>
-                            <option>Saudi Arabia</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Religin</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>Muslim</option>
-                            <option>Christian</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Gender</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Mobile</label>
-                        <input type="text" class="form-control" id="inputPassword4">
-                    </div>
-                </div>
-
-
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputEmail4">DateOfBirth</label>
-                        <input type="date" class="form-control" id="inputEmail4">
-
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Address</label>
-                        <input type="text" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">RegistrationDate</label>
-                        <input type="date" class="form-control" id="inputPassword4">
-                    </div>
-
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">PassportDetails</label>
-                    </div>
-                </div>
-
-
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputEmail4">Number</label>
-                        <input type="number" class="form-control" id="inputEmail4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputEmail4">IssuePlace</label>
-                        <input type="text" class="form-control" id="inputEmail4">
-
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">IssueDate</label>
-                        <input type="date" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">ExpiredDate</label>
-                        <input type="date" class="form-control" id="inputPassword4">
-                    </div>
-
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">ID/IqamaDetails</label>
-                    </div>
-                </div>
-
-
-
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputEmail4">Number ID</label>
-                        <input type="number" class="form-control" id="inputEmail4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputEmail4">IssuePlace</label>
-                        <input type="text" class="form-control" id="inputEmail4">
-
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">IssueDate</label>
-                        <input type="date" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">ExpiredDate</label>
-                        <input type="date" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">IDProfission</label>
-                        <input type="text" class="form-control" id="inputEmail4">
-
-                    </div>
-
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">JobDetails</label>
-                    </div>
-                </div>
-
-
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputEmail4">Department</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>HumanResources</option>
-                            <option>Finance</option>
-                            <option>adminstrator</option>
-                            <option>EmployeesIssue</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputEmail4">Job Title</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>Employee</option>
-                            <option>Manager</option>
-                            <option>admin</option>
-                            <option>Supervisor</option>
-                        </select>
-
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Hire Date</label>
-                        <input type="date" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Branch</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>Khartoum</option>
-                            <option>Saudi Arabia</option>
-                            <option>Madani</option>
-                            <option>Bahry</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">Direct Manager Name</label>
-                        <input type="text" class="form-control" id="inputEmail4">
-                    </div>
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputEmail4">The Scientific Qualification</label>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">Qualification</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>Bachlore</option>
-                            <option>Master </option>
-                            <option>Doctorate</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">Certificates</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-
-                    </div>
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputEmail4">The employement Date</label>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="inputEmail4">From</label>
-                        <input type="date" class="form-control" id="inputEmail4">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputEmail4">To</label>
-                        <input type="date" class="form-control" id="inputEmail4">
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Save</button>
-                <button type="submit" class="btn btn-primary">Clear</button>
-            </form>
-        </div>
-
-    </div>
-
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-
-        <div class="m-5">
-            <form>
-
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputEmail4">Blood Type</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>O+</option>
-                            <option>O- </option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Doctor's Name</label>
-                        <input type="text" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Address</label>
-                        <input type="text" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Contact Details</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Medical Condition</label>
-                        <input type="text" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Current Medications</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <label for="inputPassword4">Emergency Contacts</label>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Name</label>
-                        <input type="text" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Relation</label>
-                        <input type="text" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Address</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Contact Details</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Save</button>
-                <button type="submit" class="btn btn-primary">Clear</button>
-            </form>
-        </div>
-
-
-    </div>
-
-    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-        <div class="m-5">
-            <form>
-                <div class="form-row">
-                    <label for="inputEmail4">Salary Details</label>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">BankName</label>
-                        <input type="text" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Account Bank</label>
-                        <input type="text" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Basic Salary </label>
-                        <input type="number" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Housing Allounce</label>
-                        <input type="number" class="form-control" id="inputPassword4">
-                    </div>
-                </div>s
-            </form>
-        </div>
-
-
-
-    </div>
-</div>@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StaffID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullNameEn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullNameAr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AttendenceNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaritalStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nationality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Religion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistrationDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StaffID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullNameEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullNameAr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AttendenceNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaritalStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nationality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Religion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrationDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id",new {@class="btn btn-primary"}>Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id",new {@class="btn btn-success"}>Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
 }
+    </tbody>
+</table>
