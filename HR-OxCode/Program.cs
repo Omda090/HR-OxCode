@@ -12,7 +12,9 @@ namespace HR_OxCode
     public class Program
     {
 
-        //from Home
+        //fr
+
+
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();

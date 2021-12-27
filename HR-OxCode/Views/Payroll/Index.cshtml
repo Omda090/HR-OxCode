@@ -1,0 +1,262 @@
+﻿@model IEnumerable<HR_OxCode.Models.Payroll>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+  
+</ul>
+
+
+<h1>Payroll</h1>
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StaffID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Month)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Branch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccessCardNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullNameEn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullNameAr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nationality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LabourStaffCardNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PayDateStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PayDateEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DaysInPeriod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalaryBS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalaryHA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalaryTele)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalaryFuel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalaryOthers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndOfServiceBenefits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalaryPassage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalaryOvertime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalaryBonus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SocailSecurity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SocialInsurance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Absence)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Delay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OthersDeductions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Loans)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalaryRetroactiveIncome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalaryAirTickits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VacationEntitlement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VacationDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApprovedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApprovedOn)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StaffID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Month)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Branch)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmpNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccessCardNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullNameEn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullNameAr)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nationality)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LabourStaffCardNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PayDateStart)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PayDateEnd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DaysInPeriod)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalaryBS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalaryHA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalaryTele)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalaryFuel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalaryOthers)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndOfServiceBenefits)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalaryPassage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalaryOvertime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalaryBonus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SocailSecurity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SocialInsurance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Absence)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoOfDays)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Delay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OthersDeductions)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Loans)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkDays)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalaryRetroactiveIncome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalaryAirTickits)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VacationEntitlement)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VacationDays)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApprovedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApprovedOn)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

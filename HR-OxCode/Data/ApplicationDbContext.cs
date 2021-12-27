@@ -15,5 +15,7 @@ namespace HR_OxCode.Data
         }
 
         public DbSet<StaffProfile> StaffProfiles { get; set; }
+        public DbSet<Payroll> Payrolles { get; set; }
+
     }
 }
