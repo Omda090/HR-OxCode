@@ -17,12 +17,7 @@ namespace HR_OxCode.Controllers
             _context = context;
         }
 
-
-        //public IActionResult Payroll()
-        //{
-        //    return View();
-        //}
-
+        //Here
         public IActionResult Index()
         {
             var displayData = _context.Payrolles.ToList();
