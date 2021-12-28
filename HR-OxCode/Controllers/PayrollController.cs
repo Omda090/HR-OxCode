@@ -94,5 +94,19 @@ namespace HR_OxCode.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
+        //OvertimeManagement : 
+        public IActionResult Overyimeindex()
+        {
+            var displayData = _context.overtimes.ToList();
+            return View(displayData);
+        }
+
+        //LoansManagement : 
+        public IActionResult Loansindex()
+        {
+            var displayData = _context.loansManagements.ToList();
+            return View(displayData);
+        }
     }
 }

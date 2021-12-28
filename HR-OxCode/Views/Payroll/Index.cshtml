@@ -5,12 +5,13 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+
 <ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Active</a>
+        <a class="nav-link active" aria-current="page" href="#">Link</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" asp-controller="Payroll" asp-action="Overyimeindex">Overtime</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
@@ -19,8 +20,7 @@
 </ul>
 
 
-<h1>Payroll</h1>
-<h1>Index</h1>
+<h1>Index Payroll</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
