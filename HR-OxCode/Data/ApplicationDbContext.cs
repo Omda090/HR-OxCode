@@ -18,6 +18,7 @@ namespace HR_OxCode.Data
         public DbSet<Payroll> Payrolles { get; set; }
         public DbSet<Overtime> overtimes { get; set; }
         public DbSet<LoansManagement> loansManagements { get; set; }
-
+        public DbSet<PayLoans> payLoans { get; set; }
+        public DbSet<Deductibles> deductibles { get; set; }
     }
 }

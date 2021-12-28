@@ -108,5 +108,19 @@ namespace HR_OxCode.Controllers
             var displayData = _context.loansManagements.ToList();
             return View(displayData);
         }
+
+        //PayLoans : 
+        public IActionResult PayLoansindex()
+        {
+            var displayData = _context.payLoans.ToList();
+            return View(displayData);
+        }
+
+        //Deductiblets(Dely-Absence-Others) : 
+        public IActionResult Deductindex()
+        {
+            var displayData = _context.deductibles.ToList();
+            return View(displayData);
+        }
     }
 }

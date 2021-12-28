@@ -15,6 +15,7 @@ namespace HR_OxCode.Models
         public string Notes { get; set; }
         public decimal LoansAmount { get; set; }
         public int NoOfinstallments { get; set; }
+        public decimal DeductFromSalary { get; set; }
         public string LoanType { get; set; }
         public DateTime LoanHistory { get; set; }
     }

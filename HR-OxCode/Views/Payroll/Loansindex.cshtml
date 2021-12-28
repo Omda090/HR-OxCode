@@ -1,0 +1,90 @@
+﻿@model IEnumerable<HR_OxCode.Models.LoansManagement>
+
+@{
+    ViewData["Title"] = "Loansindex";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Loansindex</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Branch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoansAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfinstallments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeductFromSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanHistory)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoansAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfinstallments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeductFromSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoanType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoanHistory)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
