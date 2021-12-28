@@ -1,0 +1,82 @@
+﻿@model HR_OxCode.Models.Overtime
+
+@{
+    ViewData["Title"] = "EditOveryime";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>EditOveryime</h1>
+
+<h4>Overtime</h4>
+<hr />
+<div class="row m-5">
+    <div class="col-md-4 m-5">
+        <form asp-action="EditOveryime">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="EmpNo" class="control-label"></label>
+                <input asp-for="EmpNo" class="form-control" />
+                <span asp-validation-for="EmpNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobTitle" class="control-label"></label>
+                <input asp-for="JobTitle" class="form-control" />
+                <span asp-validation-for="JobTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Branch" class="control-label"></label>
+                <input asp-for="Branch" class="form-control" />
+                <span asp-validation-for="Branch" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BasicSalary" class="control-label"></label>
+                <input asp-for="BasicSalary" class="form-control" />
+                <span asp-validation-for="BasicSalary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TranportAllowance" class="control-label"></label>
+                <input asp-for="TranportAllowance" class="form-control" />
+                <span asp-validation-for="TranportAllowance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NoOfHours" class="control-label"></label>
+                <input asp-for="NoOfHours" class="form-control" />
+                <span asp-validation-for="NoOfHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NoOfDayes" class="control-label"></label>
+                <input asp-for="NoOfDayes" class="form-control" />
+                <span asp-validation-for="NoOfDayes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="m-5">
+    <a asp-action="Index">Back to List</a>
+</div>
+

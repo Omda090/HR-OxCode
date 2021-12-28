@@ -8,7 +8,7 @@
 <h1>Overyimeindex</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="CreateOveryime">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -86,9 +86,9 @@
                 @Html.DisplayFor(modelItem => item.Notes)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                <a asp-action="EditOveryime" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="DetailsOveryime" asp-route-id="@item.id">Details</a> |
+                <a asp-action="DeleteOveryime" asp-route-id="@item.id">Delete</a>
             </td>
         </tr>
 }

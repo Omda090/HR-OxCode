@@ -94,14 +94,85 @@ namespace HR_OxCode.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
-
+        //----------------------------------------------------------------------------------------
         //OvertimeManagement : 
         public IActionResult Overyimeindex()
         {
             var displayData = _context.overtimes.ToList();
             return View(displayData);
         }
+        public IActionResult CreateOveryime()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public async Task<IActionResult> CreateOveryime(Overtime overtime)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(overtime);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Overyimeindex");
+            }
+            return View(overtime);
+        }
+
+        public async Task<IActionResult> EditOveryime(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Overyimeindex");
+            }
+
+            var GetOvertimeDetails = await _context.overtimes.FindAsync(id);
+            return View(GetOvertimeDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditOveryime(Overtime overtime)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(overtime);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Overyimeindex");
+            }
+            return View(overtime);
+        }
+
+        public async Task<IActionResult> DetailsOveryime(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Overyimeindex");
+            }
+
+            var GetOvertimeDetails = await _context.overtimes.FindAsync(id);
+            return View(GetOvertimeDetails);
+        }
+
+        public async Task<IActionResult> DeleteOveryime(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Overyimeindex");
+            }
+
+            var GetOvertimeDetails = await _context.overtimes.FindAsync(id);
+            return View(GetOvertimeDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteOveryime(int id)
+        {
+            var GetOvertimeDetails = await _context.overtimes.FindAsync(id);
+            _context.overtimes.Remove(GetOvertimeDetails);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Overyimeindex");
+        }
+
+        //----------------------------------------------------------------------------------------
         //LoansManagement : 
         public IActionResult Loansindex()
         {
@@ -109,6 +180,7 @@ namespace HR_OxCode.Controllers
             return View(displayData);
         }
 
+        //-------------------------------------------------------------------------------------------
         //PayLoans : 
         public IActionResult PayLoansindex()
         {
@@ -116,6 +188,7 @@ namespace HR_OxCode.Controllers
             return View(displayData);
         }
 
+        //----------------------------------------------------------------------------------------------
         //Deductiblets(Dely-Absence-Others) : 
         public IActionResult Deductindex()
         {
