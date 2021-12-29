@@ -180,12 +180,154 @@ namespace HR_OxCode.Controllers
             return View(displayData);
         }
 
+        public IActionResult CreateLoans()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateLoans(LoansManagement loansManagement)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(loansManagement);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Loansindex");
+            }
+            return View(loansManagement);
+        }
+
+        public async Task<IActionResult> EditLoans(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Loansindex");
+            }
+
+            var GetLoansDetails = await _context.loansManagements.FindAsync(id);
+            return View(GetLoansDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditLoans(LoansManagement loansManagement)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(loansManagement);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Loansindex");
+            }
+            return View(loansManagement);
+        }
+
+        public async Task<IActionResult> DetailsLoans(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Loansindex");
+            }
+
+            var GetLoansDetails = await _context.loansManagements.FindAsync(id);
+            return View(GetLoansDetails);
+        }
+
+        public async Task<IActionResult> DeleteLoans(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Loansindex");
+            }
+
+            var GetLoansDetails = await _context.loansManagements.FindAsync(id);
+            return View(GetLoansDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteLoans(int id)
+        {
+            var GetLoansDetails = await _context.loansManagements.FindAsync(id);
+            _context.loansManagements.Remove(GetLoansDetails);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Loansindex");
+        }
+
         //-------------------------------------------------------------------------------------------
         //PayLoans : 
         public IActionResult PayLoansindex()
         {
             var displayData = _context.payLoans.ToList();
             return View(displayData);
+        }
+
+        public IActionResult CreatePayLoans()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreatePayLoans(PayLoans payLoans)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(payLoans);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("PayLoansindex");
+            }
+            return View(payLoans);
+        }
+
+        public async Task<IActionResult> EditPayLoans(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("PayLoansindex");
+            }
+
+            var GetPayDetails = await _context.payLoans.FindAsync(id);
+            return View(GetPayDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditPayLoans(PayLoans payLoans)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(payLoans);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("PayLoansindex");
+            }
+            return View(payLoans);
+        }
+
+        public async Task<IActionResult> DetailsPayLoans(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("PayLoansindex");
+            }
+
+            var GetPayDetails = await _context.payLoans.FindAsync(id);
+            return View(GetPayDetails);
+        }
+
+        public async Task<IActionResult> DeletePayLoans(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("PayLoansindex");
+            }
+
+            var GetPayDetails = await _context.payLoans.FindAsync(id);
+            return View(GetPayDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeletePayLoans(int id)
+        {
+            var GetPayDetails = await _context.payLoans.FindAsync(id);
+            _context.payLoans.Remove(GetPayDetails);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("PayLoansindex");
         }
 
         //----------------------------------------------------------------------------------------------
