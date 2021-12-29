@@ -256,6 +256,7 @@ namespace HR_OxCode.Controllers
         public IActionResult PayLoansindex()
         {
             var displayData = _context.payLoans.ToList();
+            displayData.ToString();
             return View(displayData);
         }
 
@@ -337,5 +338,77 @@ namespace HR_OxCode.Controllers
             var displayData = _context.deductibles.ToList();
             return View(displayData);
         }
+
+        public IActionResult CreateDeduct()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateDeduct(Deductibles deductibles)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(deductibles);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Deductindex");
+            }
+            return View(deductibles);
+        }
+
+        public async Task<IActionResult> EditDeduct(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Deductindex");
+            }
+
+            var GetDeductDetails = await _context.deductibles.FindAsync(id);
+            return View(GetDeductDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditDeduct(Deductibles deductibles)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(deductibles);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Deductindex");
+            }
+            return View(deductibles);
+        }
+
+        public async Task<IActionResult> DetailsDeduct(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Deductindex");
+            }
+
+            var GetDeductDetails = await _context.deductibles.FindAsync(id);
+            return View(GetDeductDetails);
+        }
+
+        public async Task<IActionResult> DeleteDeduct(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Deductindex");
+            }
+
+            var GetDeductDetails = await _context.deductibles.FindAsync(id);
+            return View(GetDeductDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteDeduct(int id)
+        {
+            var GetDeductDetails = await _context.deductibles.FindAsync(id);
+            _context.deductibles.Remove(GetDeductDetails);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Deductindex");
+        }
+
     }
 }
