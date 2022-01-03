@@ -15,6 +15,8 @@ namespace HR_OxCode.Controllers
         public PayrollController(ApplicationDbContext context)
         {
             _context = context;
+
+            //ApplicationDbContext db = new ApplicationDbContext();
         }
 
         //Here
@@ -255,9 +257,11 @@ namespace HR_OxCode.Controllers
         //PayLoans : 
         public IActionResult PayLoansindex()
         {
-            var displayData = _context.payLoans.ToList();
-            displayData.ToString();
-            return View(displayData);
+
+            //PayLoans payLoans= _context.payLoans.ToList();
+            //var displayData = _context.payLoans.ToList();
+            //Convert.ToString(displayData);
+            return View(_context.payLoans.ToList());
         }
 
         public IActionResult CreatePayLoans()
