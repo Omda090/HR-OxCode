@@ -20,5 +20,6 @@ namespace HR_OxCode.Data
         public DbSet<LoansManagement> loansManagements { get; set; }
         public DbSet<PayLoans> payLoans { get; set; }
         public DbSet<Deductibles> deductibles { get; set; }
+        public DbSet<HR_OxCode.Models.Letters> Letters { get; set; }
     }
 }

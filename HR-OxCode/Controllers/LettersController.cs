@@ -18,7 +18,8 @@ namespace HR_OxCode.Controllers
 
         public IActionResult Lettersindex()
         {
-            return View();
+            
+            return View(_context.Letters.ToList());
         }
     }
 }

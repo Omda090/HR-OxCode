@@ -1,0 +1,132 @@
+﻿@model IEnumerable<HR_OxCode.Models.Letters>
+
+@{
+    ViewData["Title"] = "Lettersindex";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Lettersindex</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.jobTittle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LetterDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EffectiveDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Signature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WarningDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ViolationDamage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Penelty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WarningType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BankName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Branch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalaryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartingDateOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PeriodFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PeriodTo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jobTittle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LetterDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EffectiveDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Signature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WarningDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViolationDamage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Penelty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WarningType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BankName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalaryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartingDateOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeriodFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeriodTo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

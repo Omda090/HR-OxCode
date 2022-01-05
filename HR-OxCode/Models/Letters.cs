@@ -29,8 +29,8 @@ namespace HR_OxCode.Models
         //SalaryTransfer
         public string BankName { get; set; }
         public string Branch { get; set; }
-        public long AccountNumber { get; set; }
-        public DateTime SalaryDate { get; set; }
+        public int AccountNumber { get; set; }
+        public DateTime  SalaryDate { get; set; }
 
         //SalaryCertificate : 
         //LetterDate - BankName - Signature
