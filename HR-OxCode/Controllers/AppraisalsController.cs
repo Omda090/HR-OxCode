@@ -10,22 +10,22 @@ using HR_OxCode.Models;
 
 namespace HR_OxCode.Controllers
 {
-    public class ContractsController : Controller
+    public class AppraisalsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ContractsController(ApplicationDbContext context)
+        public AppraisalsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Contracts
+        // GET: Appraisals
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Contracts.ToListAsync());
+            return View(await _context.Appraisal.ToListAsync());
         }
 
-        // GET: Contracts/Details/5
+        // GET: Appraisals/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,41 +33,41 @@ namespace HR_OxCode.Controllers
                 return NotFound();
             }
 
-            var contracts = await _context.Contracts
+            var appraisal = await _context.Appraisal
                 .FirstOrDefaultAsync(m => m.id == id);
-            if (contracts == null)
+            if (appraisal == null)
             {
                 return NotFound();
             }
 
-            return View(contracts);
+            return View(appraisal);
         }
 
-        // GET: Contracts/Create
+        // GET: Appraisals/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Contracts/Create
+        // POST: Appraisals/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,StaffID,Name,DateForm,DateTo,Notes")] Contracts contracts)
+        public async Task<IActionResult> Create([Bind("id,StaffID,Name,Nationality,jobTitle,Department,Qualification,Branch,HireDate,PerformanceAttribute,Recommendation,Comments")] Appraisal appraisal)
         {
             int? maxid = _context.Letters.Max(x => (int?)x.id);
 
             if (ModelState.IsValid)
             {
-                _context.Add(contracts);
+                _context.Add(appraisal);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(contracts);
+            return View(appraisal);
         }
 
-        // GET: Contracts/Edit/5
+        // GET: Appraisals/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -75,22 +75,22 @@ namespace HR_OxCode.Controllers
                 return NotFound();
             }
 
-            var contracts = await _context.Contracts.FindAsync(id);
-            if (contracts == null)
+            var appraisal = await _context.Appraisal.FindAsync(id);
+            if (appraisal == null)
             {
                 return NotFound();
             }
-            return View(contracts);
+            return View(appraisal);
         }
 
-        // POST: Contracts/Edit/5
+        // POST: Appraisals/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,StaffID,Name,DateForm,DateTo,Notes")] Contracts contracts)
+        public async Task<IActionResult> Edit(int id, [Bind("id,StaffID,Name,Nationality,jobTitle,Department,Qualification,Branch,HireDate,PerformanceAttribute,Recommendation,Comments")] Appraisal appraisal)
         {
-            if (id != contracts.id)
+            if (id != appraisal.id)
             {
                 return NotFound();
             }
@@ -99,12 +99,12 @@ namespace HR_OxCode.Controllers
             {
                 try
                 {
-                    _context.Update(contracts);
+                    _context.Update(appraisal);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ContractsExists(contracts.id))
+                    if (!AppraisalExists(appraisal.id))
                     {
                         return NotFound();
                     }
@@ -115,10 +115,10 @@ namespace HR_OxCode.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(contracts);
+            return View(appraisal);
         }
 
-        // GET: Contracts/Delete/5
+        // GET: Appraisals/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -126,30 +126,30 @@ namespace HR_OxCode.Controllers
                 return NotFound();
             }
 
-            var contracts = await _context.Contracts
+            var appraisal = await _context.Appraisal
                 .FirstOrDefaultAsync(m => m.id == id);
-            if (contracts == null)
+            if (appraisal == null)
             {
                 return NotFound();
             }
 
-            return View(contracts);
+            return View(appraisal);
         }
 
-        // POST: Contracts/Delete/5
+        // POST: Appraisals/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var contracts = await _context.Contracts.FindAsync(id);
-            _context.Contracts.Remove(contracts);
+            var appraisal = await _context.Appraisal.FindAsync(id);
+            _context.Appraisal.Remove(appraisal);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ContractsExists(int id)
+        private bool AppraisalExists(int id)
         {
-            return _context.Contracts.Any(e => e.id == id);
+            return _context.Appraisal.Any(e => e.id == id);
         }
     }
 }

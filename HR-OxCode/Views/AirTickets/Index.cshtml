@@ -1,0 +1,222 @@
+﻿@model IEnumerable<HR_OxCode.Models.AirTickets>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StaffID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.jobTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Branch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nationality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adults)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Children)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Infants)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValuePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfinstallment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dateinstallment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.installmentAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsuranceCompany)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EffectiveDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpiryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsuredMemberName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CardNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BasicPremium)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsuranceAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExcuseFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LeaveReason)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StaffID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jobTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nationality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightDetails)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adults)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Children)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Infants)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValuePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfinstallment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dateinstallment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.installmentAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsuranceCompany)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EffectiveDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpiryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsuredMemberName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BasicPremium)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsuranceAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExcuseFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeaveReason)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

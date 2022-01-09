@@ -10,22 +10,22 @@ using HR_OxCode.Models;
 
 namespace HR_OxCode.Controllers
 {
-    public class ContractsController : Controller
+    public class AirTicketsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ContractsController(ApplicationDbContext context)
+        public AirTicketsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Contracts
+        // GET: AirTickets
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Contracts.ToListAsync());
+            return View(await _context.AirTickets.ToListAsync());
         }
 
-        // GET: Contracts/Details/5
+        // GET: AirTickets/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,41 +33,41 @@ namespace HR_OxCode.Controllers
                 return NotFound();
             }
 
-            var contracts = await _context.Contracts
+            var airTickets = await _context.AirTickets
                 .FirstOrDefaultAsync(m => m.id == id);
-            if (contracts == null)
+            if (airTickets == null)
             {
                 return NotFound();
             }
 
-            return View(contracts);
+            return View(airTickets);
         }
 
-        // GET: Contracts/Create
+        // GET: AirTickets/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Contracts/Create
+        // POST: AirTickets/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,StaffID,Name,DateForm,DateTo,Notes")] Contracts contracts)
+        public async Task<IActionResult> Create([Bind("id,StaffID,Name,jobTitle,Branch,Nationality,Year,FlightDetails,Payment,Adults,Children,Infants,ValuePrice,NoOfinstallment,Dateinstallment,installmentAmount,InsuranceCompany,PolicyNo,EffectiveDate,ExpiryDate,InsuredMemberName,CardNo,Class,Age,Gender,BasicPremium,InsuranceAmount,ExcuseFrom,DateFrom,DateTo,NoOfDays,NoOfHours,LeaveReason")] AirTickets airTickets)
         {
             int? maxid = _context.Letters.Max(x => (int?)x.id);
 
             if (ModelState.IsValid)
             {
-                _context.Add(contracts);
+                _context.Add(airTickets);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(contracts);
+            return View(airTickets);
         }
 
-        // GET: Contracts/Edit/5
+        // GET: AirTickets/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -75,22 +75,22 @@ namespace HR_OxCode.Controllers
                 return NotFound();
             }
 
-            var contracts = await _context.Contracts.FindAsync(id);
-            if (contracts == null)
+            var airTickets = await _context.AirTickets.FindAsync(id);
+            if (airTickets == null)
             {
                 return NotFound();
             }
-            return View(contracts);
+            return View(airTickets);
         }
 
-        // POST: Contracts/Edit/5
+        // POST: AirTickets/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,StaffID,Name,DateForm,DateTo,Notes")] Contracts contracts)
+        public async Task<IActionResult> Edit(int id, [Bind("id,StaffID,Name,jobTitle,Branch,Nationality,Year,FlightDetails,Payment,Adults,Children,Infants,ValuePrice,NoOfinstallment,Dateinstallment,installmentAmount,InsuranceCompany,PolicyNo,EffectiveDate,ExpiryDate,InsuredMemberName,CardNo,Class,Age,Gender,BasicPremium,InsuranceAmount,ExcuseFrom,DateFrom,DateTo,NoOfDays,NoOfHours,LeaveReason")] AirTickets airTickets)
         {
-            if (id != contracts.id)
+            if (id != airTickets.id)
             {
                 return NotFound();
             }
@@ -99,12 +99,12 @@ namespace HR_OxCode.Controllers
             {
                 try
                 {
-                    _context.Update(contracts);
+                    _context.Update(airTickets);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ContractsExists(contracts.id))
+                    if (!AirTicketsExists(airTickets.id))
                     {
                         return NotFound();
                     }
@@ -115,10 +115,10 @@ namespace HR_OxCode.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(contracts);
+            return View(airTickets);
         }
 
-        // GET: Contracts/Delete/5
+        // GET: AirTickets/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -126,30 +126,30 @@ namespace HR_OxCode.Controllers
                 return NotFound();
             }
 
-            var contracts = await _context.Contracts
+            var airTickets = await _context.AirTickets
                 .FirstOrDefaultAsync(m => m.id == id);
-            if (contracts == null)
+            if (airTickets == null)
             {
                 return NotFound();
             }
 
-            return View(contracts);
+            return View(airTickets);
         }
 
-        // POST: Contracts/Delete/5
+        // POST: AirTickets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var contracts = await _context.Contracts.FindAsync(id);
-            _context.Contracts.Remove(contracts);
+            var airTickets = await _context.AirTickets.FindAsync(id);
+            _context.AirTickets.Remove(airTickets);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ContractsExists(int id)
+        private bool AirTicketsExists(int id)
         {
-            return _context.Contracts.Any(e => e.id == id);
+            return _context.AirTickets.Any(e => e.id == id);
         }
     }
 }

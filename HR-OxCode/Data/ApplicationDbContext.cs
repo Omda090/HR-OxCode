@@ -21,5 +21,8 @@ namespace HR_OxCode.Data
         public DbSet<PayLoans> payLoans { get; set; }
         public DbSet<Deductibles> deductibles { get; set; }
         public DbSet<HR_OxCode.Models.Letters> Letters { get; set; }
+        public DbSet<HR_OxCode.Models.Contracts> Contracts { get; set; }
+        public DbSet<HR_OxCode.Models.Appraisal> Appraisal { get; set; }
+        public DbSet<HR_OxCode.Models.AirTickets> AirTickets { get; set; }
     }
 }
