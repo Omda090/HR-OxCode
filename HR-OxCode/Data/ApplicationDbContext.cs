@@ -24,5 +24,7 @@ namespace HR_OxCode.Data
         public DbSet<HR_OxCode.Models.Contracts> Contracts { get; set; }
         public DbSet<HR_OxCode.Models.Appraisal> Appraisal { get; set; }
         public DbSet<HR_OxCode.Models.AirTickets> AirTickets { get; set; }
+        public DbSet<HR_OxCode.Models.Custody> Custody { get; set; }
+        public DbSet<HR_OxCode.Models.EndOfService> EndOfService { get; set; }
     }
 }

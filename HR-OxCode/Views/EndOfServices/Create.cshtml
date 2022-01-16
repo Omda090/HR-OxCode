@@ -1,0 +1,96 @@
+﻿@model HR_OxCode.Models.EndOfService
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>EndOfService</h4>
+<hr />
+<div class="row m-5">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmpID" class="control-label"></label>
+                <input asp-for="EmpID" class="form-control" />
+                <span asp-validation-for="EmpID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="jobtitle" class="control-label"></label>
+                <input asp-for="jobtitle" class="form-control" />
+                <span asp-validation-for="jobtitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HireDate" class="control-label"></label>
+                <input asp-for="HireDate" class="form-control" />
+                <span asp-validation-for="HireDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Branch" class="control-label"></label>
+                <input asp-for="Branch" class="form-control" />
+                <span asp-validation-for="Branch" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BasicSalary" class="control-label"></label>
+                <input asp-for="BasicSalary" class="form-control" />
+                <span asp-validation-for="BasicSalary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HouseingAllownse" class="control-label"></label>
+                <input asp-for="HouseingAllownse" class="form-control" />
+                <span asp-validation-for="HouseingAllownse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransAllownse" class="control-label"></label>
+                <input asp-for="TransAllownse" class="form-control" />
+                <span asp-validation-for="TransAllownse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalSalary" class="control-label"></label>
+                <input asp-for="TotalSalary" class="form-control" />
+                <span asp-validation-for="TotalSalary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeOfEnd" class="control-label"></label>
+                <input asp-for="TypeOfEnd" class="form-control" />
+                <span asp-validation-for="TypeOfEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndOfServiceDate" class="control-label"></label>
+                <input asp-for="EndOfServiceDate" class="form-control" />
+                <span asp-validation-for="EndOfServiceDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Benefits" class="control-label"></label>
+                <input asp-for="Benefits" class="form-control" />
+                <span asp-validation-for="Benefits" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PeriodHiredYM" class="control-label"></label>
+                <input asp-for="PeriodHiredYM" class="form-control" />
+                <span asp-validation-for="PeriodHiredYM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comments" class="control-label"></label>
+                <input asp-for="Comments" class="form-control" />
+                <span asp-validation-for="Comments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="m-5">
+    <a asp-action="Index">Back to List</a>
+</div>
+

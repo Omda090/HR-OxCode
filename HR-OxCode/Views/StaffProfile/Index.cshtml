@@ -5,6 +5,34 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+@*// New StaffProfile :*@
+
+
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="StaffProfile" asp-action="AttendState">Attendence</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="StaffProfile" asp-action="Absence">StaffAbsence</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Custodies" asp-action="Index">The Custody</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="EndOfServices" asp-action="Index">EndOfService</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+
+</ul>
+
+
+
 <h1>Index</h1>
 
 <p>

@@ -28,7 +28,7 @@ namespace HR_OxCode.Models
         public float Total { get; set; }
         public float Commission { get; set; }
         public string ContractPeriod { get; set; }
-        public string ProbationPeriod { get; set; }
+        public string ProbationPeriod { get; set; } 
         public string VacationDays { get; set; }
         public string OtherBenefits { get; set; }
 

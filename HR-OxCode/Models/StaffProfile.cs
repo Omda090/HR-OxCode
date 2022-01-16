@@ -22,9 +22,24 @@ namespace HR_OxCode.Models
         public DateTime DateOfTime { get; set; }
         public string Address { get; set; }
         public DateTime RegistrationDate { get; set; }
-       // internal static string message;
+        // internal static string message;
 
 
+        //frmAttendence :
+        public string EmpName { get; set; }
+        public string Branch { get; set; }
+        public string AttendState { get; set; }
+        public DateTime Date { get; set; }
+
+        //StaffAbsence :
+        public int EmpNo { get; set; }
+        public string Name { get; set; }
+        public string jobtitle { get; set; }
+        public DateTime AbsenceFrom { get; set; }
+        public DateTime AbsenceTo { get; set; }
+        public int NoOfDays { get; set; }
+        public string AbsenceType { get; set; }
+        public string AbsenceDetails { get; set; }
 
     }
 }

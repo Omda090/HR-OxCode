@@ -93,6 +93,165 @@ namespace HR_OxCode.Controllers
             return RedirectToAction("Index");
         }
 
+        //-------------------------------------------------------------------------------------------------------
+        //----------- Attendence Meniu : 
+
+        public IActionResult AttendState()
+        {
+            var displayData = _context.StaffProfiles.ToList();
+            return View(displayData);
+        }
+
+        public IActionResult CreateAttend()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAttend(StaffProfile stf)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(stf);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("AttendState");
+            }
+            return View(stf);
+        }
+
+        public async Task<IActionResult> EditAttend(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("AttendState");
+            }
+
+            var GetstaffDetails = await _context.StaffProfiles.FindAsync(id);
+            return View(GetstaffDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditAttend(StaffProfile staff)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(staff);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("AttendState");
+            }
+            return View(staff);
+        }
+
+        public async Task<IActionResult> DetailsAttend(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("AttendState");
+            }
+
+            var GetstaffDetails = await _context.StaffProfiles.FindAsync(id);
+            return View(GetstaffDetails);
+        }
+
+        public async Task<IActionResult> DeleteAttend(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("AttendState");
+            }
+
+            var GetstaffDetails = await _context.StaffProfiles.FindAsync(id);
+            return View(GetstaffDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteAttend(int id)
+        {
+            var GetstaffDetails = await _context.StaffProfiles.FindAsync(id);
+            _context.StaffProfiles.Remove(GetstaffDetails);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("AttendState");
+        }
+        //---------------------------------------------------------------------------------------------
+        //-------------StaffAbsence--------------------------------------------------------------------
+
+        public IActionResult Absence()
+        {
+            var displayData = _context.StaffProfiles.ToList();
+            return View(displayData);
+        }
+
+        public IActionResult CreateAbsence()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAbsence(StaffProfile stf)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(stf);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Absence");
+            }
+            return View(stf);
+        }
+
+        public async Task<IActionResult> EditAbsence(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Absence");
+            }
+
+            var GetstaffDetails = await _context.StaffProfiles.FindAsync(id);
+            return View(GetstaffDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditAbsence(StaffProfile staff)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(staff);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Absence");
+            }
+            return View(staff);
+        }
+
+        public async Task<IActionResult> DetailsAbsence(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Absence");
+            }
+
+            var GetstaffDetails = await _context.StaffProfiles.FindAsync(id);
+            return View(GetstaffDetails);
+        }
+
+        public async Task<IActionResult> DeleteAbsence(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Absence");
+            }
+
+            var GetstaffDetails = await _context.StaffProfiles.FindAsync(id);
+            return View(GetstaffDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteAbsence(int id)
+        {
+            var GetstaffDetails = await _context.StaffProfiles.FindAsync(id);
+            _context.StaffProfiles.Remove(GetstaffDetails);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Absence");
+        }
+        //--------------------------------------------------------------------------------------------------
 
     }
 }
