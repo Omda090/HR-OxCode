@@ -26,5 +26,6 @@ namespace HR_OxCode.Data
         public DbSet<HR_OxCode.Models.AirTickets> AirTickets { get; set; }
         public DbSet<HR_OxCode.Models.Custody> Custody { get; set; }
         public DbSet<HR_OxCode.Models.EndOfService> EndOfService { get; set; }
+        public DbSet<HR_OxCode.Models.Excuseing> Excuseing { get; set; }
     }
 }

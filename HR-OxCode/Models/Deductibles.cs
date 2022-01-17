@@ -20,5 +20,9 @@ namespace HR_OxCode.Models
         public string Reasons { get; set; }
         public string Notes { get; set; }
         public DateTime DeductHistory { get; set; }
+        //Last Additional
+        public DateTime TotalDeduct { get; set; }
+        public DateTime TotalPaid { get; set; }
+        public DateTime TotalPending { get; set; }
     }
 }
