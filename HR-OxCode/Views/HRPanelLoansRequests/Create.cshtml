@@ -1,0 +1,61 @@
+﻿@model HR_OxCode.Models.HRPanelLoansRequest
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>HRPanelLoansRequest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LoanAmount" class="control-label"></label>
+                <input asp-for="LoanAmount" class="form-control" />
+                <span asp-validation-for="LoanAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NoOfinstallment" class="control-label"></label>
+                <input asp-for="NoOfinstallment" class="form-control" />
+                <span asp-validation-for="NoOfinstallment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="installmentStarts" class="control-label"></label>
+                <input asp-for="installmentStarts" class="form-control" />
+                <span asp-validation-for="installmentStarts" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalLoans" class="control-label"></label>
+                <input asp-for="TotalLoans" class="form-control" />
+                <span asp-validation-for="TotalLoans" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPaid" class="control-label"></label>
+                <input asp-for="TotalPaid" class="form-control" />
+                <span asp-validation-for="TotalPaid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPending" class="control-label"></label>
+                <input asp-for="TotalPending" class="form-control" />
+                <span asp-validation-for="TotalPending" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

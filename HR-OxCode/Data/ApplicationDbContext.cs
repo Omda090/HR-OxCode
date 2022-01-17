@@ -27,5 +27,9 @@ namespace HR_OxCode.Data
         public DbSet<HR_OxCode.Models.Custody> Custody { get; set; }
         public DbSet<HR_OxCode.Models.EndOfService> EndOfService { get; set; }
         public DbSet<HR_OxCode.Models.Excuseing> Excuseing { get; set; }
+        public DbSet<HR_OxCode.Models.HRPanel> HRPanel { get; set; }
+        public DbSet<HR_OxCode.Models.HRPanelLoansRequest> HRPanelLoansRequest { get; set; }
+        public DbSet<HR_OxCode.Models.HRPanelOvertimeRequest> HRPanelOvertimeRequest { get; set; }
+        public DbSet<HR_OxCode.Models.HRPanelVacationRequest> HRPanelVacationRequest { get; set; }
     }
 }

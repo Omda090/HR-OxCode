@@ -1,0 +1,78 @@
+﻿@model IEnumerable<HR_OxCode.Models.HRPanelOvertimeRequest>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateMonth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfHourse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OverNotes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalOvertime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Totalpaid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalOVPending)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateMonth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfHourse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OverNotes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalOvertime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Totalpaid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalOVPending)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
