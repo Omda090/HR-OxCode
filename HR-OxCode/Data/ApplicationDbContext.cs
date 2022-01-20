@@ -31,5 +31,6 @@ namespace HR_OxCode.Data
         public DbSet<HR_OxCode.Models.HRPanelLoansRequest> HRPanelLoansRequest { get; set; }
         public DbSet<HR_OxCode.Models.HRPanelOvertimeRequest> HRPanelOvertimeRequest { get; set; }
         public DbSet<HR_OxCode.Models.HRPanelVacationRequest> HRPanelVacationRequest { get; set; }
+        public DbSet<HR_OxCode.Models.Settings> Settings { get; set; }
     }
 }
