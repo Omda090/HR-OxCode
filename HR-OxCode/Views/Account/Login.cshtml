@@ -18,7 +18,20 @@
 
     <!-- Custom styles for this template-->
     <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
-
+    <style>
+        .bg-login-image-custom {
+            background-image: url("1.jpg") !important;
+            background-position: center;
+            background-size: cover;
+        }
+        #image-side {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            position: relative;
+            height: 598px;
+        }
+    </style>
 </head>
 
 <body class="bg-gradient-primary">
@@ -34,7 +47,9 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image-custom" style="background-image: url('../../wwwroot/Images/2.jpg') !important;">
+                                <img src="~/Images/1.jpg" id="image-side" />
+                            </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
@@ -69,10 +84,11 @@
                                         <a href="index.html" class="btn btn-facebook btn-user btn-block">
                                             <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                                         </a>
+                                       
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="forgot-password.html">Forgot Omda Password?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="register.html">Create an Account!</a>

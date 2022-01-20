@@ -10859,11 +10859,15 @@ a:focus {
     height: calc(20rem - 43px) !important;
   }
 }
-
+.bg-login-image-custom {
+    background: url("1.jpg") !important;
+    background-position: center;
+    background-size: cover;
+}
 .bg-login-image {
-  background: url("https://source.unsplash.com/K4mSJ7kc0As/600x800");
-  background-position: center;
-  background-size: cover;
+    background: url("~/Images/1.jpg") !important;
+    background-position: center;
+    background-size: cover;
 }
 
 .bg-register-image {
