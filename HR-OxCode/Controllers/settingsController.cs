@@ -149,5 +149,241 @@ namespace HR_OxCode.Controllers
         {
             return _context.Settings.Any(e => e.id == id);
         }
+        //------------------------------------------------------------------------------------
+        //jobTitle : 
+        public IActionResult Jobtitleindex()
+        {
+            var displayData = _context.Settings.ToList();
+            return View(displayData);
+        }
+
+        public IActionResult CreateJobtitle()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateJobtitle(Settings settings)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(settings);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Jobtitleindex");
+            }
+            return View(settings);
+        }
+
+        public async Task<IActionResult> EditJobtitle(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Jobtitleindex");
+            }
+
+            var GetLoansDetails = await _context.Settings.FindAsync(id);
+            return View(GetLoansDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditJobtitle(Settings settings)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(settings);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Jobtitleindex");
+            }
+            return View(settings);
+        }
+
+        public async Task<IActionResult> DetailsJobtitle(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Jobtitleindex");
+            }
+
+            var GetLoansDetails = await _context.Settings.FindAsync(id);
+            return View(GetLoansDetails);
+        }
+
+        public async Task<IActionResult> DeleteJobtitle(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Jobtitleindex");
+            }
+
+            var GetLoansDetails = await _context.Settings.FindAsync(id);
+            return View(GetLoansDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteJobtitle(int id)
+        {
+            var GetLoansDetails = await _context.Settings.FindAsync(id);
+            _context.Settings.Remove(GetLoansDetails);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Jobtitleindex");
+        }
+        //--------------------------------------------------------------------------------------
+        //Nationality : 
+
+        public IActionResult Nationaltyindex()
+        {
+            var displayData = _context.Settings.ToList();
+            return View(displayData);
+        }
+
+        public IActionResult CreateNationality()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateNationality(Settings settings)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(settings);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Nationaltyindex");
+            }
+            return View(settings);
+        }
+
+        public async Task<IActionResult> EditNationality(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Nationaltyindex");
+            }
+
+            var GetLoansDetails = await _context.Settings.FindAsync(id);
+            return View(GetLoansDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditNationality(Settings settings)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(settings);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Nationaltyindex");
+            }
+            return View(settings);
+        }
+
+        public async Task<IActionResult> DetailsNationality(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Nationaltyindex");
+            }
+
+            var GetLoansDetails = await _context.Settings.FindAsync(id);
+            return View(GetLoansDetails);
+        }
+
+        public async Task<IActionResult> DeleteNationality(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Nationaltyindex");
+            }
+
+            var GetLoansDetails = await _context.Settings.FindAsync(id);
+            return View(GetLoansDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteNationality(int id)
+        {
+            var GetLoansDetails = await _context.Settings.FindAsync(id);
+            _context.Settings.Remove(GetLoansDetails);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Nationaltyindex");
+        }
+        //---------------------------------------------------------------------------------------
+        //BankNAme :
+
+        public IActionResult BankNameindex()
+        {
+            var displayData = _context.Settings.ToList();
+            return View(displayData);
+        }
+
+        public IActionResult CreateBank()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateBank(Settings settings)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(settings);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("BankNameindex");
+            }
+            return View(settings);
+        }
+
+        public async Task<IActionResult> EditBank(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("BankNameindex");
+            }
+
+            var GetLoansDetails = await _context.Settings.FindAsync(id);
+            return View(GetLoansDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditBank(Settings settings)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(settings);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("BankNameindex");
+            }
+            return View(settings);
+        }
+
+        public async Task<IActionResult> DetailsBank(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("BankNameindex");
+            }
+
+            var GetLoansDetails = await _context.Settings.FindAsync(id);
+            return View(GetLoansDetails);
+        }
+
+        public async Task<IActionResult> DeleteBank(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("BankNameindex");
+            }
+
+            var GetLoansDetails = await _context.Settings.FindAsync(id);
+            return View(GetLoansDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteBank(int id)
+        {
+            var GetLoansDetails = await _context.Settings.FindAsync(id);
+            _context.Settings.Remove(GetLoansDetails);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("BankNameindex");
+        }
     }
 }

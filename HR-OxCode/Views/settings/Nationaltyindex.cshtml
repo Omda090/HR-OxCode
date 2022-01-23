@@ -1,33 +1,11 @@
 ﻿@model IEnumerable<HR_OxCode.Models.Settings>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Nationaltyindex";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<ul class="nav nav-tabs">
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Link</a>
-    </li>
-  
-    <li class="nav-item">
-        <a class="nav-link" asp-controller="Settings" asp-action="Jobtitleindex">Jobtitle</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" asp-controller="Settings" asp-action="Nationaltyindex">Nationality</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" asp-controller="Settings" asp-action="BankNameindex">BankName</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-    </li>
-
-</ul>
-
-
-
-<h1>Index</h1>
+<h1>Nationaltyindex</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -35,22 +13,22 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.DepartmentAr)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DepartmentEn)
             </th>
-            @*<th>
+            <th>
                 @Html.DisplayNameFor(model => model.jobtitle)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.NationalityAr)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.NationalityEn)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.BankName)
             </th>*@
             <th></th>
@@ -59,22 +37,22 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.DepartmentAr)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DepartmentEn)
             </td>
-            @*<td>
+            <td>
                 @Html.DisplayFor(modelItem => item.jobtitle)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.NationalityAr)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NationalityEn)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.BankName)
             </td>*@
             <td>
