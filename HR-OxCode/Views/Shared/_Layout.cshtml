@@ -6,6 +6,27 @@
     <title>@ViewData["Title"] - HR_OxCode</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+
+
+    @*//BeginReport
+
+    @Html.DevExpress().GetStyleSheets(
+    
+       new StyleSheet { ExtensionSuite = ExtensionSuite.Report}
+    
+    )
+    @Html.DevExpress().GetScripts(
+
+
+      new Script { ExtensionSuite = ExtensionSuite.Report}
+
+    )
+
+    <link href="@Uri.Content("~/Content/site.css") rel= "stylesheet" text="text/css">
+
+
+    //EndReport*@
+
 </head>
 <body>
 
