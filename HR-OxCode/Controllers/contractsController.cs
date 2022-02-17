@@ -25,6 +25,11 @@ namespace HR_OxCode.Controllers
             return View(await _context.Contracts.ToListAsync());
         }
 
+        public IActionResult PrintView()
+        {
+            return View();
+        }
+
         // GET: Contracts/Details/5
         public async Task<IActionResult> Details(int? id)
         {

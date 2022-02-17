@@ -1,3 +1,4 @@
+using DevExpress.AspNetCore;
 using HR_OxCode.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -49,14 +50,15 @@ namespace HR_OxCode
                 app.UseHsts();
             }
 
-            app.UseStaticFiles(new StaticFileOptions {
+            //app.UseStaticFiles(new StaticFileOptions
+            //{
 
-                FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "node_modules")),
+            //    FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "node_modules")),
 
-                RequestPath = "/node_modules"
+            //    RequestPath = "/node_modules"
 
 
-            });
+            //});
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -65,7 +67,7 @@ namespace HR_OxCode
 
             app.UseAuthorization();
 
-            app.UseeDevExpressControls();
+            app.UseDevExpressControls();
 
             app.UseEndpoints(endpoints =>
             {
