@@ -12,5 +12,11 @@ namespace HR_OxCode.Controllers
         {
             return View();
         }
+
+        public IActionResult Reports2()
+        {
+            return View();
+        }
+
     }
 }

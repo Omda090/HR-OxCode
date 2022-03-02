@@ -1,0 +1,342 @@
+@page
+@using DXWebApplication2.Models
+
+<h2>Home</h2>
+
+@(Html.DevExtreme().DataGrid<SampleOrder>()
+    .ShowBorders(true)
+    .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
+    .Columns(columns => {
+        columns.AddFor(m => m.OrderID);
+        columns.AddFor(m => m.OrderDate);
+        columns.AddFor(m => m.CustomerName);
+        columns.AddFor(m => m.ShipCountry);
+        columns.AddFor(m => m.ShipCity);
+    })
+    .Paging(p => p.PageSize(10))
+    .FilterRow(f => f.Visible(true))
+    .HeaderFilter(f => f.Visible(true))
+    .GroupPanel(p => p.Visible(true))
+    .Grouping(g => g.AutoExpandAll(false))
+    .RemoteOperations(true)
+    .Summary(s => s
+        .TotalItems(totalItems => {
+            totalItems.AddFor(m => m.ShipCity).SummaryType(SummaryType.Count);
+        })
+        .GroupItems(groupItems => {
+            groupItems.Add().SummaryType(SummaryType.Count);
+        })
+    )
+)
+
+
+
+@(Html.DevExtreme().DataGrid<DXWebApplication2.Reports.XtraReport>()
+    .Columns(columns => {
+
+        //columns.AddFor(m => m.ShowUserFriendlyNamesInUserDesigner);
+
+        //columns.AddFor(m => m.BrickPresentation).AllowEditing(false);
+
+        columns.AddFor(m => m.DocumentExportMode);
+
+        columns.AddFor(m => m.DisplayName);
+
+        columns.AddFor(m => m.ScriptsSource);
+
+        columns.AddFor(m => m.SnapGridSize);
+
+        columns.AddFor(m => m.SnapGridStepCount);
+
+        columns.AddFor(m => m.Bookmark);
+
+        columns.AddFor(m => m.DrawGrid);
+
+        columns.AddFor(m => m.DrawWatermark);
+
+        columns.AddFor(m => m.SnapToGrid);
+
+        columns.AddFor(m => m.PreviewRowCount);
+
+        columns.AddFor(m => m.ShowDesignerHints);
+
+        columns.AddFor(m => m.ShowExportWarnings);
+
+        columns.AddFor(m => m.ShowPrintingWarnings);
+
+        columns.AddFor(m => m.DataSourceSchema);
+
+        columns.AddFor(m => m.SnappingMode);
+
+        columns.AddFor(m => m.Expanded);
+
+        columns.AddFor(m => m.LockedInUserDesigner);
+
+        columns.AddFor(m => m.ShrinkSubReportIconArea);
+
+        columns.AddFor(m => m.ShowPreviewMarginLines);
+
+        columns.AddFor(m => m.VerticalContentSplitting);
+
+        columns.AddFor(m => m.HorizontalContentSplitting);
+
+        columns.AddFor(m => m.BookmarkDuplicateSuppress);
+
+        columns.AddFor(m => m.PageBreak);
+
+        columns.AddFor(m => m.SourceUrl);
+
+        columns.AddFor(m => m.ReportUnit);
+
+        columns.AddFor(m => m.RollPaper);
+
+        columns.AddFor(m => m.Landscape);
+
+        columns.AddFor(m => m.PrinterName);
+
+        columns.AddFor(m => m.PaperName);
+
+        columns.AddFor(m => m.PageWidth);
+
+        columns.AddFor(m => m.PageHeight);
+
+        columns.AddFor(m => m.StyleSheetPath);
+
+        columns.AddFor(m => m.ScriptLanguage);
+
+        columns.AddFor(m => m.ScriptReferences);
+
+        columns.AddFor(m => m.ScriptReferencesString);
+
+        columns.AddFor(m => m.Version);
+
+        columns.AddFor(m => m.RequestParameters);
+
+        columns.AddFor(m => m.ShowPrintStatusDialog);
+
+        columns.AddFor(m => m.ShowPrintMarginsWarning);
+
+        columns.AddFor(m => m.RightToLeft);
+
+        columns.AddFor(m => m.RightToLeftLayout);
+
+        columns.AddFor(m => m.ControlType).AllowEditing(false);
+
+        columns.AddFor(m => m.EventsInfo);
+
+        //columns.AddFor(m => m.DevExpress.XtraReports.Serialization.IRootXmlObject.ShouldSerializeLocalization).AllowEditing(false);
+
+        //columns.AddFor(m => m.CanCreateDocumentAsync).AllowEditing(false);
+
+        columns.AddFor(m => m.DetailPrintCount);
+
+        columns.AddFor(m => m.DetailPrintCountOnEmptyDataSource);
+
+        columns.AddFor(m => m.PrintOnEmptyDataSource);
+
+        columns.AddFor(m => m.SnapLinePadding);
+
+        columns.AddFor(m => m.HeightF);
+
+        columns.AddFor(m => m.StyleName);
+
+        columns.AddFor(m => m.EvenStyleName);
+
+        columns.AddFor(m => m.OddStyleName);
+
+        columns.AddFor(m => m.FilterString);
+
+        columns.AddFor(m => m.DataMember);
+
+        columns.AddFor(m => m.XmlDataPath);
+
+        columns.AddFor(m => m.CurrentRowIndex).AllowEditing(false);
+
+        columns.AddFor(m => m.RowCount).AllowEditing(false);
+
+        columns.AddFor(m => m.CurrentRowHierarchyLevel).AllowEditing(false);
+
+        columns.AddFor(m => m.KeepTogether);
+
+        //columns.AddFor(m => m.SuppressListFillingInDataContext).AllowEditing(false);
+
+        //columns.AddFor(m => m.DisplayableRowCount).AllowEditing(false);
+
+        //columns.AddFor(m => m.DevExpress.XtraReports.Native.IDisplayNamePropertyContainer.CanSetPropertyValue).AllowEditing(false);
+
+        //columns.AddFor(m => m.PrintedAsSecondaryContent).AllowEditing(false);
+
+        //columns.AddFor(m => m.DrillDownExpandedInternal);
+
+        columns.AddFor(m => m.PrintAcrossBands);
+
+        //columns.AddFor(m => m.PrintAcross).AllowEditing(false);
+
+        //columns.AddFor(m => m.PrintSubreportAcross).AllowEditing(false);
+
+        columns.AddFor(m => m.SnapLineMargin);
+
+        columns.AddFor(m => m.CanHaveChildren).AllowEditing(false);
+
+        columns.AddFor(m => m.CanPublish);
+
+        columns.AddFor(m => m.NavigateUrl);
+
+        columns.AddFor(m => m.Target);
+
+        //    columns.AddFor(m => m.BandKind).AllowEditing(false);
+
+        columns.AddFor(m => m.AnchorVertical);
+
+        columns.AddFor(m => m.AnchorHorizontal);
+
+        columns.AddFor(m => m.WidthF);
+
+        columns.AddFor(m => m.Text);
+
+        columns.AddFor(m => m.XlsxFormatString);
+
+        columns.AddFor(m => m.LocationFloat);
+
+        columns.AddFor(m => m.LeftF);
+
+        columns.AddFor(m => m.TopF);
+
+        columns.AddFor(m => m.RightF).AllowEditing(false);
+
+        columns.AddFor(m => m.BottomF).AllowEditing(false);
+
+        columns.AddFor(m => m.CanGrow);
+
+        columns.AddFor(m => m.CanShrink);
+
+        columns.AddFor(m => m.WordWrap);
+
+        //columns.AddFor(m => m.IsNavigateTarget).AllowEditing(false);
+
+        //columns.AddFor(m => m.SortFieldsPropertyName).AllowEditing(false);
+
+        //columns.AddFor(m => m.LevelInternal);
+
+        //columns.AddFor(m => m.CanHaveExportWarning).AllowEditing(false);
+
+        //columns.AddFor(m => m.AffectBrickRightToLeft).AllowEditing(false);
+
+        //columns.AddFor(m => m.SupportSnapLines).AllowEditing(false);
+
+        //columns.AddFor(m => m.BoundsWidthF).AllowEditing(false);
+
+        //columns.AddFor(m => m.UndoInProgress).AllowEditing(false);
+
+        //columns.AddFor(m => m.DocumentBandKind).AllowEditing(false);
+
+        columns.AddFor(m => m.IsSingleChild).AllowEditing(false);
+
+        //columns.AddFor(m => m.BoundsChanging);
+
+        //columns.AddFor(m => m.DefaultWidth).AllowEditing(false);
+
+        //columns.AddFor(m => m.DefaultHeight).AllowEditing(false);
+
+        //columns.AddFor(m => m.IsDeserializing).AllowEditing(false);
+
+        columns.AddFor(m => m.HasChildren).AllowEditing(false);
+
+        columns.AddFor(m => m.Index);
+
+        columns.AddFor(m => m.NullValueText);
+
+        columns.AddFor(m => m.Dock);
+
+        columns.AddFor(m => m.TextAlignment);
+
+        columns.AddFor(m => m.Width);
+
+        columns.AddFor(m => m.Height);
+
+        columns.AddFor(m => m.Left);
+
+        columns.AddFor(m => m.Top);
+
+        columns.AddFor(m => m.Right).AllowEditing(false);
+
+        columns.AddFor(m => m.Bottom).AllowEditing(false);
+
+        columns.AddFor(m => m.TextFormatString);
+
+        //columns.AddFor(m => m.CanChangeZOrder).AllowEditing(false);
+
+        //columns.AddFor(m => m.CanHaveTOC).AllowEditing(false);
+
+        //columns.AddFor(m => m.CanDrawBackground).AllowEditing(false);
+
+        //columns.AddFor(m => m.HasUndefinedBounds).AllowEditing(false);
+
+        //columns.AddFor(m => m.NeedCalcContainerHeight).AllowEditing(false);
+
+        //columns.AddFor(m => m.ActualBorderWidth).AllowEditing(false);
+
+        //columns.AddFor(m => m.DefaultAnchorVertical).AllowEditing(false);
+
+        //columns.AddFor(m => m.DefaultAnchorHorizontal).AllowEditing(false);
+
+        columns.AddFor(m => m.IsDisposed).AllowEditing(false);
+
+        columns.AddFor(m => m.Dpi);
+
+        columns.AddFor(m => m.Name);
+
+        columns.AddFor(m => m.Padding);
+
+        columns.AddFor(m => m.Borders);
+
+        columns.AddFor(m => m.BorderWidth);
+
+        columns.AddFor(m => m.BorderDashStyle);
+
+        columns.AddFor(m => m.DrillDownKey);
+
+        columns.AddFor(m => m.Visible);
+
+        //columns.AddFor(m => m.CanAutoHeight).AllowEditing(false);
+
+        //columns.AddFor(m => m.ReportIsLoading).AllowEditing(false);
+
+        columns.AddFor(m => m.ProcessNullValues);
+
+        columns.AddFor(m => m.ProcessDuplicates);
+
+        columns.AddFor(m => m.ProcessDuplicatesMode);
+
+        columns.AddFor(m => m.ProcessDuplicatesTarget);
+
+        //columns.AddFor(m => m.HasPageSummary).AllowEditing(false);
+
+        //columns.AddFor(m => m.HasRunningSummary).AllowEditing(false);
+
+        //columns.AddFor(m => m.VisibleContourBorders).AllowEditing(false);
+
+        //columns.AddFor(m => m.IsBound).AllowEditing(false);
+
+        //columns.AddFor(m => m.DevExpress.XtraPrinting.IBrickOwner.IsNavigationLink).AllowEditing(false);
+
+        //columns.AddFor(m => m.DevExpress.XtraPrinting.IBrickOwner.IsNavigationTarget).AllowEditing(false);
+
+        //columns.AddFor(m => m.DevExpress.XtraPrinting.IBrickOwner.NeedCalcContainerHeight).AllowEditing(false);
+
+        //columns.AddFor(m => m.DevExpress.XtraPrinting.IBrickOwner.HasPageSummary).AllowEditing(false);
+
+        //columns.AddFor(m => m.DevExpress.XtraPrinting.IBrickOwner.HasRunningSummary).AllowEditing(false);
+
+        //columns.AddFor(m => m.DevExpress.XtraPrinting.IBrickOwner.CanCacheImages).AllowEditing(false);
+
+        //columns.AddFor(m => m.CanRaiseEvents).AllowEditing(false);
+
+        //columns.AddFor(m => m.DesignMode).AllowEditing(false);
+    })
+    .Editing(e => e
+        .AllowAdding(true)
+        .AllowUpdating(true)
+        .AllowDeleting(true)
+    )
+)
