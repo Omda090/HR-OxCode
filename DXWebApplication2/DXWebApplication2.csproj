@@ -23,5 +23,8 @@
       <DependentUpon>XtraReport.repx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Reportt\" />
+  </ItemGroup>
   <ProjectExtensions><VisualStudio><UserProperties TemplateFeatures="NETCORE" /></VisualStudio></ProjectExtensions>
 </Project>
